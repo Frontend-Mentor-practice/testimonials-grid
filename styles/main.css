@@ -1,5 +1,6 @@
 :root {
   --clr-primary-violet: hsl(263, 55%, 52%);
+  --clr-primary-light-purple: hsl(264, 82%, 70%);
   --clr-primary-dark-grey-blue: hsl(217, 19%, 35%);
   --clr-primary-black-blue: hsl(219, 29%, 14%);
   --clr-primary-white: hsl(0, 0%, 100%);
@@ -26,7 +27,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1110px;
+  max-width: 1150px;
   margin-inline: auto;
 }
 
@@ -54,6 +55,10 @@ p {
 
 .bg-clr-violet {
   background-color: var(--clr-primary-violet);
+}
+
+.bg-clr-light-purple {
+  background-color: var(--clr-primary-light-purple);
 }
 
 .bg-clr-white {
@@ -100,6 +105,10 @@ p {
   line-height: 11px;
 }
 
+.lh-18 {
+  line-height: 18px;
+}
+
 .opacity-70 {
   opacity: 70%;
 }
@@ -114,11 +123,18 @@ p {
 .container {
   display: grid;
   grid-gap: 1.875rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+
+  grid-template-areas: 
+  'Daniel Daniel Jonathan Kira'
+  'Jeanette Patrick Patrick Kira';
 }
 
 .card {
   padding: 1.625rem 2rem;
   position: relative;
+  box-shadow: 40px 60px 50px -47px rgba(72,85,106,24%);
 }
 .card > figure {
   gap: 1.125rem;
@@ -133,5 +149,51 @@ p {
 .card:first-child .quote {
   position: absolute;
   top: 0;
-  right: calc(80px);
+  right: 10%;
+}
+
+div.highlight {
+  background-color: var(--highlight, var(--clr-primary-violet));
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.card:nth-child(1) {
+  --highlight: var(--clr-primary-light-purple);
+  grid-area: Daniel;
+}
+.card:nth-child(2) {
+  grid-area: Jonathan;
+}
+.card:nth-child(3) {
+  grid-area: Jeanette;
+}
+.card:nth-child(4) {
+  grid-area: Patrick;
+}
+.card:nth-child(5) {
+  grid-area: Kira;
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: unset;
+    grid-template-areas: 
+    'Daniel Jonathan'
+    'Jeanette Patrick'
+    'Kira .';
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'Daniel'
+    'Jonathan'
+    'Jeanette'
+    'Patrick'
+    'Kira';
+  }
 }
