@@ -6,12 +6,132 @@
   --clr-neutral-light-gray: hsl(0, 0%, 81%);
   --clr-neutral-gray-blue:  hsl(210, 46%, 95%);
 
-  --fs: 13px;
+  --fs-11: 0.6875rem;
+  --fs-13: 0.8125rem;
+  --fs-20: 1.25rem;
 }
 
 body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1110px; */
   /*
     weight: 500 & 600
   */
   font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: hsl(0, 0%, 95%);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1110px;
+  margin-inline: auto;
+}
+
+h2 {
+  font-size: var(--fs-20);
+}
+
+p {
+  font-size: var(--fs-13);
+}
+
+/************************************************/
+
+.clr-txt-grey-blue {
+  color: var(--clr-primary-dark-grey-blue);
+}
+
+.clr-txt-white {
+  color: var(--clr-primary-white);
+}
+
+.clr-txt-light-grey {
+  color: var(--clr-neutral-light-gray);
+}
+
+.bg-clr-violet {
+  background-color: var(--clr-primary-violet);
+}
+
+.bg-clr-white {
+  background-color: var(--clr-primary-white);
+}
+
+.bg-clr-grey-blue {
+  background-color: var(--clr-primary-dark-grey-blue);
+}
+
+.bg-clr-black-blue {
+  background-color: var(--clr-primary-black-blue);
+}
+
+.bg-clr-black-blue {
+  background-color: var(--clr-primary-black-blue);
+}
+
+.fs-11 {
+  font-size: var(--fs-11);
+}
+
+.fs-13 {
+  font-size: var(--fs-13);
+}
+
+.fs-20 {
+  font-size: var(--fs-20);
+}
+
+.mbe-16 {
+  margin-block-end: 1rem;
+}
+
+.mbe-24 {
+  margin-block-end: 1.5rem;
+}
+
+.lh-13 {
+  line-height: 13px;
+}
+
+.lh-11 {
+  line-height: 11px;
+}
+
+.opacity-70 {
+  opacity: 70%;
+}
+
+.opacity-50 {
+  opacity: 50%;
+}
+
+/************************************************/
+
+/*  grid container  */
+.container {
+  display: grid;
+  grid-gap: 1.875rem;
+}
+
+.card {
+  padding: 1.625rem 2rem;
+  position: relative;
+}
+.card > figure {
+  gap: 1.125rem;
+}
+.card > figure img {
+  width: 28px;
+}
+.card:first-child blockquote {
+  position: relative;
+  z-index: 2;
+}
+.card:first-child .quote {
+  position: absolute;
+  top: 0;
+  right: calc(80px);
 }
